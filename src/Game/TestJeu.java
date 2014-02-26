@@ -1,5 +1,5 @@
 /* TODO Convention java : les packages sont en minuscules */
-package Game;
+package game;
 
 public class TestJeu {
 
