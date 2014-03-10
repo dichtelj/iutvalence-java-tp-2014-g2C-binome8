@@ -2,12 +2,12 @@ package game;
 
 public class Jeu {
 	private Plateau plat;
-	/* TODO Rajouter les joueurs. */
-	/* TODO Rajouetr tour courant. */
+	private Joueur joueur;
+	/* TODO Rajouter tour courant. */
 	
 	public Jeu() {
 		plat = new Plateau();
-		/* TODO Rajouter joueurs */
+		joueur = new Joueur(null, false, false);
 		/* TODO Rajouter joueurcourant. */
 	}
 	
