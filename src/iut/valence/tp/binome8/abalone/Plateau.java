@@ -2,18 +2,18 @@ package iut.valence.tp.binome8.abalone;
 
 /** Classe d'initialisation du plateau et des cases.
  * 
- * @author TODO
+ * @author ROCCI David DICHTEL Jonathan TP2C
  * @version TODO
  */
 public class Plateau {
-	/** TODO. */
+	/** Création du plateau du jeu de abalone */
 	public Bille[][] plat;
 
 	public Plateau(Joueur joueur1, Joueur joueur2) {
-		this.plat = new Bille[9][9];
+		this.plat = new Bille[10][10];
 		
-		for (int numberLine = 0; numberLine < 9 ; numberLine++)
-			for (int numberColumn = 0; numberColumn < 9; numberColumn++)
+		for (int numberLine = 1; numberLine < 10 ; numberLine++)
+			for (int numberColumn = 1; numberColumn < 10; numberColumn++)
 				if ((numberColumn == 9 && 4<numberLine )|| (numberColumn == 8 && numberLine > 3)|| (numberColumn == 7 && (4<numberLine && numberLine<8))) {
 						
 						this.plat[numberLine][numberColumn] = new Bille(joueur1);
@@ -24,37 +24,33 @@ public class Plateau {
 		
     }
 	
-	@Override
+	
 	public String toString() {
 		String plateauAsciiArt = "";
-		for (int numberLine = 0; numberLine < 9 ; numberLine++)
-			for (int numberColumn = 0; numberColumn < 9; numberColumn++)
+		for (int numberLine = 1; numberLine < 10 ; numberLine++)
+		{
+			for (int numberColumn = 1; numberColumn < 10; numberColumn++)
+			{
 				if ((numberColumn == 9 && 4<numberLine )|| (numberColumn == 8 && numberLine > 3)|| (numberColumn == 7 && (4<numberLine && numberLine<8))) {
 						
 							plateauAsciiArt += "B ";
 				}
-				else if((numberColumn == 1 && (0<numberLine && numberLine<6))||(numberColumn == 2 && (0<numberLine && numberLine<7))|| (numberColumn == 3 && (2<numberLine && numberLine<6)))
-							
-							plateauAsciiArt += "W ";
+				else if((numberColumn == 1 && numberLine<6)||(numberColumn == 2 && (0<numberLine && numberLine<7))|| (numberColumn == 3 && (2<numberLine && numberLine<6)))
+				{	
+							plateauAsciiArt += "W ";}
+				else if ((numberColumn == 1 && numberLine>5)||(numberColumn == 2 && numberLine>6)||(numberColumn == 3 && numberLine>7)||(numberColumn == 4 && numberLine>8))
+				{
+					plateauAsciiArt += "  ";}
+				else if ((numberColumn == 9 && 5>numberLine)||(numberColumn == 8 && 4>numberLine)||(numberColumn == 7 && 3>numberLine)||(numberColumn == 6 && 2>numberLine))
+				{
+					plateauAsciiArt += "  ";}
 				else 
-							plateauAsciiArt += "x ";
-		
+							plateauAsciiArt += ". ";
+			}
+			
 		plateauAsciiArt += "\n";
-	
-
+		}
 		return plateauAsciiArt;
 	}
 	 
-    public boolean mouvementPossible(int positionXDepart,int positionYDepart,int positionXArrivee, int positionYArrivee)
-    {
-    	return true;
-    }
-    
-    public void deplacerBille(int positionXDepart,int positionYDepart,int positionXArrivee, int positionYArrivee)
-    {
-    	/* Gestion de la boule principale. */
-    	plat[positionXArrivee][positionYArrivee] = plat[positionXDepart][positionYDepart];
-    	plat[positionXDepart][positionYDepart] = null;
-    	/* Gérer les mouvements induits. */
-    }
 }

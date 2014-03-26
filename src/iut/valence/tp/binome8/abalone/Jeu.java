@@ -1,6 +1,8 @@
 package iut.valence.tp.binome8.abalone;
 
-/*Classe de lancement du jeu */
+import java.util.Scanner;
+
+/**Classe de lancement du jeu */
 
 public class Jeu {
 	private final Plateau plat;
@@ -11,8 +13,8 @@ public class Jeu {
 	/* TODO Rajouter tour courant. */
 	
 	public Jeu(String nomJoueur1, String nomJoueur2) {
-		this.j1 = new Joueur(nomJoueur1, Joueur.white, false);
-		this.j2 = new Joueur(nomJoueur2, Joueur.black, false);
+		this.j1 = new Joueur(nomJoueur1, Joueur.white);
+		this.j2 = new Joueur(nomJoueur2, Joueur.black);
 		plat = new Plateau(j1,j2);
 		joueurCourant = j1;
 	}
@@ -25,17 +27,29 @@ public class Jeu {
 	/** Initialisation du tour.*/
 	public void jouer()
 	{
-		System.out.println(plat);
+
 		int i,j,k,l;
 		do {
-			/* Demander le coup à jouer. */
-			i=5;
-			j=7;
-			k=8;
-			l=2;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Veuillez saisir la coordonnées x de départ:");
+		String str = sc.nextLine();
+		i = Integer.parseInt(str);
+		Scanner sc1 = new Scanner(System.in);
+		System.out.println("Veuillez saisir la coordonnées y de départ:");
+		String str1 = sc1.nextLine();
+		j = Integer.parseInt(str1);
+		Scanner sc2 = new Scanner(System.in);
+		System.out.println("Veuillez saisir la coordonnées x d'arrivée:");
+		String str2 = sc.nextLine();
+		k = Integer.parseInt(str2);
+		Scanner sc3 = new Scanner(System.in);
+		System.out.println("Veuillez saisir la coordonnées y d'arrivée:");
+		String str3 = sc.nextLine();
+		l = Integer.parseInt(str3);
 		}
 		while (!plat.mouvementPossible(i, j, k, l));
 		plat.deplacerBille(i, j, k, l);
+		System.out.println(plat);
 		joueurSuivant();
 	}
 }
