@@ -1,31 +1,12 @@
 package iut.valence.tp.binome8.abalone;
 
 public class Mouvement {
+	private final Direction direction;
+	private final Type type;
 	
-	private String mouvement;
-	private String dir;
-
-	public boolean mouvementEstPossible(Mouvement mouvement,Mouvement direction)
-	{
-		
-		return false;
-	}
-	
-	
-	
-	
-	
+	public Mouvement(int i, int j, int k, int l) {
+		/* Transformer i,j,k,l en direction et type. */
+		direction = null;
+		type = null;
+	}	
 }
-	
-	
-/*	public boolean mouvementPossible(int positionXDepart,int positionYDepart,int positionXArrivee, int positionYArrivee)
-    {
-    	return true;
-    }
-    */
-    /*public void deplacerBille(int positionXDepart,int positionYDepart,int positionXArrivee, int positionYArrivee)
-    {
-    	plat[positionXArrivee][positionYArrivee] = plat[positionXDepart][positionYDepart];
-    	plat[positionXDepart][positionYDepart] = null;
-    }
-}*/

@@ -24,7 +24,7 @@ public class Plateau {
 		
     }
 	
-	
+	@Override
 	public String toString() {
 		String plateauAsciiArt = "";
 		for (int numberLine = 1; numberLine < 10 ; numberLine++)
@@ -52,5 +52,14 @@ public class Plateau {
 		}
 		return plateauAsciiArt;
 	}
-	 
+
+	public boolean mouvementPossible(Mouvement mouvement) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void deplacerBille(Mouvement mouvement) {
+		// TODO Auto-generated method stub
+		
+	}
 }
