@@ -13,8 +13,8 @@ public class Jeu {
 	/* TODO Rajouter tour courant. */
 
 	public Jeu(String nomJoueur1, String nomJoueur2) {
-		this.j1 = new Joueur(nomJoueur1, Joueur.white);
-		this.j2 = new Joueur(nomJoueur2, Joueur.black);
+		this.j1 = new Joueur(nomJoueur1, Joueur.TypeCase.White);
+		this.j2 = new Joueur(nomJoueur2, Joueur.TypeCase.Black);
 		plat = new Plateau(j1, j2);
 		joueurCourant = j1;
 	}
@@ -25,6 +25,7 @@ public class Jeu {
 
 	/** Initialisation du tour. */
 	public void jouer() {
+		System.out.println(plat);
 		Mouvement mouvement;
 		do {
 			Scanner sc = new Scanner(System.in);

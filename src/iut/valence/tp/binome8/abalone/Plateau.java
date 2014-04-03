@@ -31,6 +31,7 @@ public class Plateau {
 		{
 			for (int numberColumn = 1; numberColumn < 10; numberColumn++)
 			{
+				Bille bille = this.plat[numberLine][numberColumn];
 				if ((numberColumn == 9 && 4<numberLine )|| (numberColumn == 8 && numberLine > 3)|| (numberColumn == 7 && (4<numberLine && numberLine<8))) {
 						
 							plateauAsciiArt += "B ";

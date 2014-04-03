@@ -11,5 +11,10 @@ public class Bille {
     public Joueur getPlayer() {
         return this.player;
     }
+    
+    @Override
+    public String toString() {
+    	return player.toString();
+    }
 }
 	

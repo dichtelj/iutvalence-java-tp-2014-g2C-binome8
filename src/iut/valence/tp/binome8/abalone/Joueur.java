@@ -3,24 +3,39 @@ package iut.valence.tp.binome8.abalone;
 /**Classe définissant l'état du joueur*/
 public class Joueur {
     public final String  name;
-    public final boolean colorPlayer;
+    public final String colorPlayer;
 
-    public static final boolean white = true;
-    public static final boolean black  = false;
+    public enum TypeCase
+    {
+    	Black("B"),
+    	White("W"),
+    	Invalid(" "),
+    	Void(".");
 
+    	
+    	public final String typeCase;
+    	
+    	TypeCase(String typeCase) {
+    		this.typeCase = typeCase;
+    	}
+    }
+    
 
-    public Joueur(String name, boolean colorJ) {
+    public Joueur(String name, TypeCase typeCase) {
         this.name = name;
-        this.colorPlayer = colorJ;
+        this.colorPlayer = this.toString();
     }
 
     public String getName() {
         return this.name;
     }
 
-    public boolean getColor() {
+    public String getColor() {
         return colorPlayer;
     }
-
-
+    
+    @Override
+    public String toString() {
+    	return colorPlayer;
+    }
 }
