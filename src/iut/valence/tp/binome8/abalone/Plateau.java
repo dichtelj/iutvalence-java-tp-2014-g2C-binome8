@@ -24,7 +24,8 @@ public class Plateau {
 		
     }
 	
-	@Override
+	/** Creation d'un plateau en chaîne de caractère*/
+	
 	public String toString() {
 		String plateauAsciiArt = "";
 		for (int numberLine = 1; numberLine < 10 ; numberLine++)
@@ -54,13 +55,62 @@ public class Plateau {
 		return plateauAsciiArt;
 	}
 
-	public boolean mouvementPossible(Mouvement mouvement) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	/**Test si un mouvement est possible */
+	public boolean mouvementPossible(Mouvement mouvement) throws ErreurCase {
+		Direction direction = mouvement.getDirection();
+		Type type = mouvement.getType();
+		if((type=Type.Decaler) != null)
+		{
+			if((direction=Direction.HAUT) != null)
+			{
+				this.deplacerBille(mouvement);
+			}
+			if((direction=Direction.BAS) != null)
+			{
+				
+			}
+			
+		if((type=Type.PousserLigne) != null)
+		{
+			if((direction=Direction.DROITE) != null)
+			{
+				this.deplacerBille(mouvement);
+			}
+		}
+		
+			if((direction=Direction.GAUCHE) != null)
+			{
+				
+			}
 
-	public void deplacerBille(Mouvement mouvement) {
-		// TODO Auto-generated method stub
+		if((type=Type.PousserDiag) != null)
+		{
+			if((direction=Direction.BASDROITE) != null)
+			{
+				this.deplacerBille(mouvement);
+			}
+
+			if((direction=Direction.BASGAUCHE) != null)
+			{
+				this.deplacerBille(mouvement);
+			}
+
+			if((direction=Direction.HAUTDROITE) != null)
+			{
+				this.deplacerBille(mouvement);
+			}
+
+			if((direction=Direction.HAUTGAUCHE) != null)
+			{
+				this.deplacerBille(mouvement);
+			}
+		}
+	}
+		return false;
+}
+/** Deplacement de bille(s)*/
+	public void deplacerBille(Mouvement mouvement) 
+	{
 		
 	}
 }

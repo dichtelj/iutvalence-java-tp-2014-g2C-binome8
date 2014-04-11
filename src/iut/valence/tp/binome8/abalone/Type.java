@@ -1,6 +1,7 @@
 package iut.valence.tp.binome8.abalone;
 
 public enum Type {
+	/**Enumeration de type de deplacement*/
 	
 	PousserDiag("Diag"),
 	PousserLigne("Ligne"),

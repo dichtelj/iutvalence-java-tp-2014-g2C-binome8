@@ -10,7 +10,7 @@ public class Jeu {
 	private final Joueur j1;
 	private final Joueur j2;
 
-	/* TODO Rajouter tour courant. */
+	/** TODO Rajouter tour courant. */
 
 	public Jeu(String nomJoueur1, String nomJoueur2) {
 		this.j1 = new Joueur(nomJoueur1, Joueur.TypeCase.White);
@@ -23,11 +23,14 @@ public class Jeu {
 		this.joueurCourant = joueurCourant.equals(j1) ? j2 : j1;
 	}
 
-	/** Initialisation du tour. */
-	public void jouer() {
+	/** Initialisation du tour. 
+	 * @throws ErreurCase 
+	 * @throws NumberFormatException */
+	public void jouer() throws NumberFormatException, ErreurCase {
 		System.out.println(plat);
 		Mouvement mouvement;
 		do {
+			/** récuperation des coordonnées de deplacement au clavier*/
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Veuillez saisir la coordonnées x de départ:");
 			String str = sc.nextLine();
@@ -44,7 +47,7 @@ public class Jeu {
 			System.out.println("Veuillez saisir la coordonnées y d'arrivée:");
 			String str3 = sc.nextLine();
 			int l = Integer.parseInt(str3);
-			/* Translation de i,j,k,l en mouvement ? */
+			/** Translation de i,j,k,l en mouvement*/
 			mouvement = new Mouvement(i,j,k,l);
 		} while (!plat.mouvementPossible(mouvement));
 		plat.deplacerBille(mouvement);

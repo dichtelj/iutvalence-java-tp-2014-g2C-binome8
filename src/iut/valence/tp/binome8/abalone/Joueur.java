@@ -4,7 +4,7 @@ package iut.valence.tp.binome8.abalone;
 public class Joueur {
     public final String  name;
     public final String colorPlayer;
-
+/** enumeration du type d'etat de la case*/
     public enum TypeCase
     {
     	Black("B"),

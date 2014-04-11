@@ -1,11 +1,13 @@
 package iut.valence.tp.binome8.abalone;
 
 public class Mouvement {
+	/** classe de creation de mouvement en fonction d'une direction et d'un mouvement*/
+	
 	private Direction direction;
 	private Type type;
-	
+
 	public Mouvement(int i, int j, int k, int l) {
-		/* Transformer i,j,k,l en direction et type. */
+		/** Transformation de coordonnées i,j,k,l en direction et type. */
 		direction = null;
 		type = null;
 		
@@ -50,5 +52,15 @@ public class Mouvement {
 			this.type= Type.PousserLigne;
 			
 		}
-	}	
+	}
+    /** récuperation du type*/
+	public Type getType() 
+    {
+    	return type;
+    }
+	/** récuperation de la direction*/
+    public Direction getDirection() 
+    {
+    	return direction;
+    }   
 }

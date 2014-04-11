@@ -1,6 +1,7 @@
 package iut.valence.tp.binome8.abalone;
 
 public enum Direction {
+	/** enumeration de direction de deplacement*/
 	HAUT("h"),
 	BAS ("b"),
 	GAUCHE("g"),
