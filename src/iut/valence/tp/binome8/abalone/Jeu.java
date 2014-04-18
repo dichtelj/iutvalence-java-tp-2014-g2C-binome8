@@ -9,13 +9,17 @@ public class Jeu {
 	private Joueur joueurCourant;
 	private final Joueur j1;
 	private final Joueur j2;
+	private final Joueur jN;
+	private final Joueur jV;
 
 	/** TODO Rajouter tour courant. */
 
 	public Jeu(String nomJoueur1, String nomJoueur2) {
-		this.j1 = new Joueur(nomJoueur1, Joueur.TypeCase.White);
-		this.j2 = new Joueur(nomJoueur2, Joueur.TypeCase.Black);
-		plat = new Plateau(j1, j2);
+		this.j1 = new Joueur(nomJoueur1, TypeCase.WHITE);
+		this.j2 = new Joueur(nomJoueur2, TypeCase.BLACK);
+		this.jN = new Joueur(nomJoueur2, TypeCase.INVALID);
+		this.jV = new Joueur(nomJoueur2, TypeCase.VOID);
+		plat = new Plateau(j1, j2,jN,jV);
 		joueurCourant = j1;
 	}
 
@@ -23,10 +27,8 @@ public class Jeu {
 		this.joueurCourant = joueurCourant.equals(j1) ? j2 : j1;
 	}
 
-	/** Initialisation du tour. 
-	 * @throws ErreurCase 
-	 * @throws NumberFormatException */
-	public void jouer() throws NumberFormatException, ErreurCase {
+	/** Initialisation du tour. */
+	public void jouer()  {
 		System.out.println(plat);
 		Mouvement mouvement;
 		do {
