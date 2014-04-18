@@ -22,7 +22,7 @@ public class Jeu {
 		plat = new Plateau(j1, j2,jN,jV);
 		joueurCourant = j1;
 	}
-
+/** Attribue le joueur suivant */
 	public void joueurSuivant() {
 		this.joueurCourant = joueurCourant.equals(j1) ? j2 : j1;
 	}

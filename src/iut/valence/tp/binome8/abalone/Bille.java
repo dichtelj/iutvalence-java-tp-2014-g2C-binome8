@@ -7,12 +7,12 @@ public class Bille {
     public Bille(Joueur player) {
        this.player = player;
     }
-
+/**Récuperation du joueur associé à la bille */
     public Joueur getPlayer() {
         return this.player;
     }
     
-    @Override
+    /** Conversion d'un joueur en caractère via une couleur*/
     public String toString() {
     	return player.toString();
     }

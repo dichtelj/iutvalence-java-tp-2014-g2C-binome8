@@ -15,7 +15,7 @@ public enum TypeCase
 	{
 		this.typeCase = typeCase;
 	}
-	
+	/** Conversion d'un Type de case en caractère*/
 	@Override
 	public String toString() {
 		return typeCase;
